@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  admin-panel:
+    build:
+      context: ./admin-panel
+    container_name: car-listings-admin-panel-dev
+    command: npm run dev
+    working_dir: /app
+    volumes:
+      - ./admin-panel:/app
+      - /app/node_modules
+    env_file:
+      - .env
+    environment:
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:8000/api}
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
