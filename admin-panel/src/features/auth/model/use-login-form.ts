@@ -19,6 +19,6 @@ export function useLoginFormValidation() {
   return {
     login: isLoginValid(login),
     password: isPasswordValid(password),
-    isValid: isLoginValid(login) && isPasswordValid(password),
+    isValid: !isLoginValid(login) && !isPasswordValid(password),
   };
 }
