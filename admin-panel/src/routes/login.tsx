@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { Center } from '@mantine/core';
 import { LoginForm } from '#/features/auth/login-form';
 
 export const Route = createFileRoute('/login')({
@@ -7,8 +8,8 @@ export const Route = createFileRoute('/login')({
 
 function Login() {
   return (
-    <main className="flex items-center justify-center h-screen">
+    <Center mih="100vh">
       <LoginForm />
-    </main>
+    </Center>
   );
 }
