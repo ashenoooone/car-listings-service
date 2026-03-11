@@ -30,6 +30,7 @@ export default antfu(
       'ts/consistent-type-definitions': ['error', 'type'],
       'perfectionist/sort-imports': 'off',
       'perfectionist/sort-named-imports': ['off'],
+      'react-refresh/only-export-components': 'off',
     },
   },
 );
