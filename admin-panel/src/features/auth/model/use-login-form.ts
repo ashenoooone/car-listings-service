@@ -1,6 +1,6 @@
 import { create, useStore } from 'zustand';
 import type { LoginFormStore } from './types';
-import { validateLogin, validatePassword } from './validators';
+import { isLoginValid, isPasswordValid } from './validators';
 
 const loginStore = create<LoginFormStore>(set => ({
   login: '',
@@ -17,7 +17,8 @@ export function useLoginFormValidation() {
   const { login, password } = useLoginForm();
 
   return {
-    login: validateLogin(login),
-    password: validatePassword(password),
+    login: isLoginValid(login),
+    password: isPasswordValid(password),
+    isValid: isLoginValid(login) && isPasswordValid(password),
   };
 }
