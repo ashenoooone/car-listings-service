@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "car-listings-tg-bot"
+version = "0.1.0"
+description = "Telegram bot for natural-language car search"
+authors = ["Roman <ashen.one.dev@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "app" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiogram = "^3.0.0"
+sqlalchemy = "^2.0.36"
+asyncpg = "^0.30.0"
+openai = "^1.57.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
