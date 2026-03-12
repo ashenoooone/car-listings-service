@@ -11,16 +11,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Устанавливаем poetry
 RUN curl -sSL https://install.python-poetry.org | python - \
     && ln -s /root/.local/bin/poetry /usr/local/bin/poetry
 
-# Сначала только файлы зависимостей
 COPY pyproject.toml ./
 
 RUN poetry install --no-root --only main
 
-# Теперь копируем исходники
 COPY app ./app
 
 EXPOSE 8000
